@@ -25,9 +25,7 @@ public class Deletion {
     public static void main(String[] args) {
         int[] arr = new int[100];
         int[] values = {1,2,3,4,5};
-        for(int i = 0; i < n; i++){
-            arr[i] = values[i];
-        }
+        System.arraycopy(values, 0, arr, 0, n);
         display(arr, n);
         deletion(arr, 2);  // delete the first occurence of an element 
         System.out.println();
