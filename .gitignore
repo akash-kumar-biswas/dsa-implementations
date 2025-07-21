@@ -22,3 +22,34 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# Ignore executable files
+*.exe
+
+# Ignore object files
+*.o
+*.obj
+
+# Ignore compiled libraries
+*.lib
+*.dll
+*.so
+*.a
+
+# Ignore build folders (if you use them)
+build/
+bin/
+out/
+
+# Ignore temporary files
+*.log
+*.tmp
+
+# Ignore backup files
+*~
+*.bak
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
