@@ -1,5 +1,4 @@
 
-
 class Node{
     int data;
     Node next;
@@ -44,6 +43,38 @@ public class Insertion{
         }
     }
 
+    static int listSize(Node head){
+        int cnt = 0;
+        Node curr = head;
+        while (curr != null) { 
+            curr = curr.next;
+            cnt++;
+        }
+        return cnt;
+    }
+
+    static  Node  insertAtPosition(Node head, int pos, int val){
+        if(pos == 0){
+            return insertAtBeginning(head, val);
+        }
+
+        if(pos >= listSize(head)){
+            System.out.println("Out of bounds");
+            return head;
+        }
+
+        Node curr = head;
+        while(pos != 1){
+            curr = curr.next;
+            pos--;
+        }
+        Node newNode = new Node(val);
+        newNode.next = curr.next;
+        curr.next = newNode;
+        return head; 
+    }
+
+
     public static void main(String[] args) {
         Node head = new Node(4);
         head.next = new Node(5);
@@ -56,6 +87,10 @@ public class Insertion{
         System.out.println("");
         head = insertAtEnd(head, 8);
         System.out.print("Insert at the end: ");
+        display(head);
+        System.out.println("");
+        head = insertAtPosition(head, 3, 9);
+        System.out.print("Insert at the pos: ");
         display(head);
     }
 }
