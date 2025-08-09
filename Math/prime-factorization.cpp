@@ -23,7 +23,7 @@ int main(){
     cin >> n;
 
     vector<int> primes;
-    primeFactorization(n, primes);
+    primeFactorization(n, primes);  //prime factorization of a given number n in O(sqrt(n)) time
 
     for(auto prime: primes)
         cout << prime << " ";
